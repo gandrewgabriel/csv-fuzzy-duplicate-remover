@@ -7,6 +7,7 @@ A row is identified as a duplicate if its values in a user-specified subset of c
 
 When more than one column is specified, a duplicate row is only identified when there is some other row in the datafile which matches all of those columns (according to their specified match methods).
 
+
 ## Usage
 ```
 python remove_duplicates.py <datafile_path> <specfile_path> <output_directory_path>
@@ -15,6 +16,8 @@ python remove_duplicates.py <datafile_path> <specfile_path> <output_directory_pa
 `<datafile_path>` is the path to a CSV datafile.
 `<specfile_path>` is the path to a JSON specfile describing how to identify duplicate rows in the datafile.      
 `<output_directory_path>` is the path to the directory in which the output CSV file should be saved.
+
+Dependencies are given in the Conda `environment.yaml` file.
 
 ## Specification Files
 The columns within which to check for matches and the methods for identifying matches within each column are defined in a specification `.json` file.
