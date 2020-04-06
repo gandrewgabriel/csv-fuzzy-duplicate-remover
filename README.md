@@ -9,7 +9,7 @@ When more than one column is specified, a duplicate row is only identified when 
 
 ## Usage
 ```
-python C:\dev\csv-fuzzy-duplicate-remover/remove_duplicates.py <datafile_path> <specfile_path> <output_directory_path>
+python remove_duplicates.py <datafile_path> <specfile_path> <output_directory_path>
 ```
 
 `<datafile_path>` is the path to a CSV datafile.
