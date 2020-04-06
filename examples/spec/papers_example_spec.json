@@ -1,0 +1,8 @@
+{
+    "Title": {
+        "method": "exact_lower_alphanumeric"
+    },
+    "Year": {
+        "method": "exact"
+    }
+}
