@@ -6,6 +6,8 @@ import re
 from typing import Dict, List, Callable
 from pathlib import Path
 
+DEFAULT_ENCODING = "utf_8_sig"
+
 ATTRIBUTE_METHOD = "method"
 
 METHOD_EXACT = "exact"
@@ -29,7 +31,7 @@ def remove_duplicates(source: Path, criteria: Dict[str, Dict[str, str]]):
     """
     tracked_rows = {}
     row_count = 0
-    with open(source) as csvfile:
+    with open(source, encoding=DEFAULT_ENCODING) as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             row_count += 1
@@ -97,7 +99,7 @@ def main(datafile: Path, specfile: Path, outputdirectory: Path):
     results = remove_duplicates(datafile, specification_dict)
     df = pd.DataFrame(results)
     df.to_csv(Path(outputdirectory, datafile.stem +
-                   OUTPUT_FILE_SUFFIX), index=False)
+                   OUTPUT_FILE_SUFFIX), index=False, encoding=DEFAULT_ENCODING)
 
 
 if __name__ == "__main__":
